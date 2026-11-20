@@ -1,0 +1,421 @@
+/* Roles: where a Caribe token becomes a decision for Obsidian.
+   --caribe-* = tokens (generated), --c-* = roles per mode, the rest = Obsidian's own variables.
+   No hex here: every colour comes from a token. */
+
+/* ---------- Mode-independent ---------- */
+body {
+  /* Type */
+  --caribe-font-heading: Gully, Manrope, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-text-theme: Moderustic, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-interface-theme: Moderustic, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-monospace-theme: "Fliege Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --line-height-normal: 1.6;
+  --bold-weight: 700;
+
+  /* Heading hierarchy: size, rule weight, colour and face all change per level,
+     so the skeleton of a note reads at a glance. */
+  --inline-title-font: var(--caribe-font-heading);
+  --inline-title-size: 2.25em;
+  --inline-title-weight: 700;
+  --inline-title-line-height: 1.15;
+  --inline-title-letter-spacing: -0.01em;
+
+  --h1-font: var(--caribe-font-heading);
+  --h2-font: var(--caribe-font-heading);
+  --h3-font: var(--caribe-font-heading);
+  --h4-font: var(--caribe-font-heading);
+  --h5-font: var(--font-monospace);
+  --h6-font: var(--font-monospace);
+  --h1-size: 1.95em;
+  --h2-size: 1.5em;
+  --h3-size: 1.28em;
+  --h4-size: 1.1em;
+  --h5-size: 0.82em;
+  --h6-size: 0.76em;
+  --h1-weight: 700;
+  --h2-weight: 700;
+  --h3-weight: 700;
+  --h4-weight: 700;
+  --h5-weight: 500;
+  --h6-weight: 400;
+  --h1-line-height: 1.15;
+  --h2-line-height: 1.25;
+  --h3-line-height: 1.3;
+  --h4-line-height: 1.4;
+  --h5-line-height: 1.5;
+  --h6-line-height: 1.5;
+  --h1-letter-spacing: -0.01em;
+  --h2-letter-spacing: -0.01em;
+  --h5-letter-spacing: 0.08em;
+  --h6-letter-spacing: 0.08em;
+  --h5-variant: normal;
+  --h6-variant: normal;
+  --caribe-h1-rule: 3px;   /* border-emphasis */
+  --caribe-h2-rule: 2px;   /* border-default */
+
+  /* Square corners everywhere: radius 0 */
+  --radius-s: 0;
+  --radius-m: 0;
+  --radius-l: 0;
+  --radius-xl: 0;
+  --button-radius: 0;
+  --input-radius: 0;
+  --checkbox-radius: 0;
+  --toggle-radius: 0;
+  --toggle-thumb-radius: 0;
+  --callout-radius: 0;
+  --code-radius: 0;
+  --tag-radius: 0;
+  --modal-radius: 0;
+  --tab-radius: 0;
+  --tab-radius-active: 0;
+  --tab-curve: 0;
+  --scrollbar-radius: 0;
+  --clickable-icon-radius: 0;
+  --image-radius: 0;
+  --list-bullet-radius: 0;
+  --embed-border-radius: 0;
+
+  /* Borders: 2 px default, 3 px emphasis (interface); hairlines in the note */
+  --divider-width: 2px;
+  --modal-border-width: 2px;
+  --prompt-border-width: 2px;
+  --toggle-border-width: 2px;
+  --table-border-width: 1px;
+  --hr-thickness: 2px;
+  --blockquote-border-thickness: 3px;
+  --callout-border-width: 0 0 0 3px;
+  --callout-border-opacity: 1;
+  --callout-blend-mode: normal;
+  --callout-padding: 12px 16px 12px 18px;
+  --callout-title-weight: 700;
+  --callout-title-padding: 0;
+
+  /* Icons: Lucide at 1.5 px, as the design system asks */
+  --icon-stroke: 1.5px;
+  --icon-s-stroke-width: 1.5px;
+  --icon-m-stroke-width: 1.5px;
+  --icon-l-stroke-width: 1.5px;
+  --icon-xl-stroke-width: 1.5px;
+
+  /* Lists */
+  --list-bullet-size: 0.34em;
+  --list-indent: 2em;
+  --list-spacing: 0.12em;
+  --checkbox-size: 1em;
+
+  /* Tables */
+  --table-header-font: var(--font-monospace);
+  --table-header-size: 0.72em;
+  --table-header-weight: 500;
+  --table-text-size: 0.9em;
+  --table-white-space: normal;
+
+  /* Code, tags, quotes */
+  --code-size: 0.88em;
+  --code-white-space: pre-wrap;
+  --tag-size: 0.78em;
+  --tag-weight: 400;
+  --tag-padding-x: 0.5em;
+  --tag-padding-y: 0.1em;
+  --tag-border-width: 1px;
+  --tag-decoration: none;
+  --tag-decoration-hover: none;
+  --blockquote-font-style: normal;
+  --link-decoration-thickness: 1px;
+
+  /* Interface */
+  --status-bar-font-size: 11px;
+  --status-bar-radius: 0;
+  --status-bar-border-width: 2px 0 0 2px;
+  --input-shadow: none;
+  --input-shadow-hover: none;
+  --input-height: 32px;
+  --metadata-label-font: var(--font-monospace);
+  --metadata-label-font-size: 0.78em;
+  --metadata-input-font-size: 0.9em;
+  --metadata-property-radius: 0;
+  --metadata-property-radius-hover: 0;
+  --metadata-property-radius-focus: 0;
+}
+
+/* ---------- Dark (the default way of working) ---------- */
+.theme-dark {
+  --c-bg: var(--caribe-bg-page-dark);
+  --c-bg-rgb: var(--caribe-bg-page-dark-rgb);
+  --c-surface: var(--caribe-bg-surface-dark);
+  --c-chrome: var(--caribe-color-carbon);
+  --c-ink: var(--caribe-text-primary-dark);
+  --c-muted: var(--caribe-text-secondary-dark);
+  --c-faint: var(--caribe-state-disabled-text-dark);
+  --c-border: var(--caribe-color-border-dark);
+  --c-rule: var(--caribe-table-rule-dark);
+  --c-shadow: var(--caribe-shadow-color-dark);
+  --c-accent: var(--caribe-color-mar-caribe-on-dark);
+  --c-accent-rgb: var(--caribe-color-mar-caribe-on-dark-rgb);
+  --c-accent-hover: var(--caribe-state-mar-caribe-hover-dark);
+  --c-accent-pressed: var(--caribe-state-mar-caribe-pressed-dark);
+  --c-on-accent: var(--caribe-color-carbon);
+  --c-hover: var(--caribe-state-secondary-hover-dark);
+  --c-pressed: var(--caribe-state-secondary-pressed-dark);
+  --c-selected: var(--caribe-row-selected-dark);
+  --c-selected-text: var(--caribe-row-selected-text-dark);
+  --c-inverse-bg: var(--caribe-color-hueso);
+  --c-inverse-ink: var(--caribe-color-carbon);
+  --c-table-head: var(--caribe-table-head-dark);
+  --c-table-head-text: var(--caribe-table-head-text-dark);
+  --c-row-hover: var(--caribe-row-hover-dark);
+  --c-disabled: var(--caribe-state-disabled-dark);
+  --c-disabled-border: var(--caribe-state-disabled-border-dark);
+
+  /* Palette, lifted for dark grounds */
+  --c-mar-rgb: var(--caribe-color-mar-caribe-on-dark-rgb);
+  --c-cielo-rgb: var(--caribe-color-cielo-llanero-on-dark-rgb);
+  --c-salmon-rgb: var(--caribe-color-salmon-on-dark-rgb);
+  --c-maiz-rgb: var(--caribe-color-sol-de-maiz-rgb);
+  --c-buganvilia-rgb: var(--caribe-color-buganvilia-on-dark-rgb);
+  --c-tierra-rgb: var(--caribe-text-secondary-dark-rgb);
+  --c-success-rgb: var(--caribe-color-success-rgb);
+  --c-warning-rgb: var(--caribe-color-warning-rgb);
+  --c-error-rgb: var(--caribe-color-salmon-on-dark-rgb); /* color-error is too dark on dark grounds */
+
+  --h3-color: var(--caribe-color-salmon-on-dark);
+  --h4-color: var(--caribe-color-cielo-llanero-on-dark);
+  --text-highlight-bg: rgba(var(--caribe-color-sol-de-maiz-rgb), 0.32);
+}
+
+/* ---------- Light ---------- */
+.theme-light {
+  --c-bg: var(--caribe-bg-surface);          /* the note is paper ... */
+  --c-bg-rgb: var(--caribe-bg-surface-rgb);
+  --c-surface: var(--caribe-bg-page);
+  --c-chrome: var(--caribe-bg-page);         /* ... on a Hueso table */
+  --c-ink: var(--caribe-text-primary);
+  --c-muted: var(--caribe-seq-neutro-4);     /* text-secondary is 3.3:1: too low for small UI text */
+  --c-faint: var(--caribe-text-secondary);
+  --c-border: var(--caribe-color-border);
+  --c-rule: var(--caribe-table-rule);
+  --c-shadow: var(--caribe-shadow-color);
+  --c-accent: var(--caribe-color-mar-caribe-deep);
+  --c-accent-rgb: var(--caribe-color-mar-caribe-deep-rgb);
+  --c-accent-hover: var(--caribe-state-mar-caribe-hover);
+  --c-accent-pressed: var(--caribe-state-mar-caribe-pressed);
+  --c-on-accent: var(--caribe-color-hueso);
+  --c-hover: var(--caribe-state-secondary-hover);
+  --c-pressed: var(--caribe-state-secondary-pressed);
+  --c-selected: var(--caribe-row-selected);
+  --c-selected-text: var(--caribe-row-selected-text);
+  --c-inverse-bg: var(--caribe-color-carbon);
+  --c-inverse-ink: var(--caribe-color-hueso);
+  --c-table-head: var(--caribe-table-head);
+  --c-table-head-text: var(--caribe-table-head-text);
+  --c-row-hover: var(--caribe-row-hover);
+  --c-disabled: var(--caribe-state-disabled);
+  --c-disabled-border: var(--caribe-state-disabled-border);
+
+  --c-mar-rgb: var(--caribe-color-mar-caribe-rgb);
+  --c-cielo-rgb: var(--caribe-color-cielo-llanero-rgb);
+  --c-salmon-rgb: var(--caribe-color-salmon-rgb);
+  --c-maiz-rgb: var(--caribe-color-sol-de-maiz-rgb);
+  --c-buganvilia-rgb: var(--caribe-color-buganvilia-rgb);
+  --c-tierra-rgb: var(--caribe-color-tierra-rgb);
+  --c-success-rgb: var(--caribe-color-success-rgb);
+  --c-warning-rgb: var(--caribe-color-warning-rgb);
+  --c-error-rgb: var(--caribe-color-error-rgb);
+
+  --h3-color: var(--caribe-color-salmon);
+  --h4-color: var(--caribe-color-cielo-llanero);
+  --text-highlight-bg: rgba(var(--caribe-color-sol-de-maiz-rgb), 0.45);
+}
+
+/* ---------- Roles -> Obsidian (both modes) ---------- */
+.theme-dark,
+.theme-light {
+  /* Grounds */
+  --background-primary: var(--c-bg);
+  --background-primary-alt: var(--c-surface);
+  --background-secondary: var(--c-chrome);
+  --background-secondary-alt: var(--c-chrome);
+  --background-modifier-hover: var(--c-hover);
+  --background-modifier-active-hover: var(--c-pressed);
+  --background-modifier-border: var(--c-rule);
+  --background-modifier-border-hover: var(--c-muted);
+  --background-modifier-border-focus: var(--c-accent);
+  --background-modifier-form-field: var(--c-bg);
+  --background-modifier-form-field-highlighted: var(--c-bg);
+  --background-modifier-message: var(--c-inverse-bg);
+  --background-modifier-cover: rgba(var(--c-bg-rgb), 0.85);
+  --background-modifier-error: rgb(var(--c-error-rgb));
+  --background-modifier-error-hover: rgb(var(--c-error-rgb));
+  --background-modifier-success: rgb(var(--c-success-rgb));
+  --titlebar-background: var(--c-chrome);
+  --titlebar-background-focused: var(--c-chrome);
+  --ribbon-background: var(--c-chrome);
+  --ribbon-background-collapsed: var(--c-chrome);
+  --status-bar-background: var(--c-chrome);
+  --status-bar-border-color: var(--c-border);
+  --divider-color: var(--c-border);
+  --divider-color-hover: var(--c-accent);
+  --tab-outline-color: var(--c-border);
+  --tab-background-active: var(--c-bg);
+  --tab-text-color: var(--c-muted);
+  --tab-text-color-active: var(--c-ink);
+  --tab-text-color-focused: var(--c-ink);
+  --tab-text-color-focused-active: var(--c-ink);
+  --tab-text-color-focused-active-current: var(--c-ink);
+
+  /* Text */
+  --text-normal: var(--c-ink);
+  --text-muted: var(--c-muted);
+  --text-faint: var(--c-faint);
+  --text-on-accent: var(--c-on-accent);
+  --text-on-accent-inverted: var(--c-inverse-ink);
+  --text-accent: var(--c-accent);
+  --text-accent-hover: var(--c-accent-hover);
+  --text-error: rgb(var(--c-error-rgb));
+  --text-success: rgb(var(--c-success-rgb));
+  --text-warning: rgb(var(--c-warning-rgb));
+  --text-selection: rgba(var(--c-accent-rgb), 0.3);
+  --text-highlight-bg-active: rgba(var(--c-maiz-rgb), 0.6);
+  --caret-color: var(--c-accent);
+
+  /* Accent: Mar Caribe, the activity colour. It overrides the accent picker on purpose. */
+  --color-accent: var(--c-accent);
+  --color-accent-1: var(--c-accent-hover);
+  --color-accent-2: var(--c-accent-pressed);
+  --interactive-normal: var(--c-surface);
+  --interactive-hover: var(--c-hover);
+  --interactive-accent: var(--c-accent);
+  --interactive-accent-hover: var(--c-accent-hover);
+
+  /* Obsidian's named colours, mapped to Caribe so plugins and the graph follow the system */
+  --color-red-rgb: var(--c-error-rgb);
+  --color-orange-rgb: var(--c-salmon-rgb);
+  --color-yellow-rgb: var(--c-maiz-rgb);
+  --color-green-rgb: var(--c-success-rgb);
+  --color-cyan-rgb: var(--c-mar-rgb);
+  --color-blue-rgb: var(--c-cielo-rgb);
+  --color-purple-rgb: var(--c-buganvilia-rgb);
+  --color-pink-rgb: var(--c-buganvilia-rgb);
+  --color-red: rgb(var(--color-red-rgb));
+  --color-orange: rgb(var(--color-orange-rgb));
+  --color-yellow: rgb(var(--color-yellow-rgb));
+  --color-green: rgb(var(--color-green-rgb));
+  --color-cyan: rgb(var(--color-cyan-rgb));
+  --color-blue: rgb(var(--color-blue-rgb));
+  --color-purple: rgb(var(--color-purple-rgb));
+  --color-pink: rgb(var(--color-pink-rgb));
+
+  /* Callouts: soft Caribe colours, usable out of the box */
+  --callout-default: var(--c-cielo-rgb);      /* note */
+  --callout-info: var(--c-cielo-rgb);
+  --callout-summary: var(--c-tierra-rgb);     /* abstract, tldr */
+  --callout-todo: var(--c-mar-rgb);
+  --callout-tip: var(--c-mar-rgb);            /* hint */
+  --callout-important: var(--c-buganvilia-rgb);
+  --callout-success: var(--c-success-rgb);    /* check, done */
+  --callout-question: var(--c-maiz-rgb);      /* help, faq */
+  --callout-warning: var(--c-warning-rgb);    /* caution, attention */
+  --callout-fail: var(--c-salmon-rgb);        /* failure, missing */
+  --callout-error: var(--c-error-rgb);        /* danger */
+  --callout-bug: var(--c-salmon-rgb);
+  --callout-example: var(--c-buganvilia-rgb);
+  --callout-quote: var(--c-tierra-rgb);       /* cite */
+
+  /* Note content */
+  --h1-color: var(--c-ink);
+  --h2-color: var(--c-ink);
+  --h5-color: var(--c-ink);
+  --h6-color: var(--c-muted);
+  --inline-title-color: var(--c-ink);
+  --hr-color: var(--c-border);
+  --blockquote-border-color: var(--c-muted);
+  --blockquote-color: var(--c-ink);
+  --link-color: var(--c-accent);
+  --link-color-hover: var(--c-accent-hover);
+  --link-external-color: var(--c-accent);
+  --link-external-color-hover: var(--c-accent-hover);
+  --link-unresolved-color: var(--c-muted);
+  --link-unresolved-opacity: 1;
+  --link-unresolved-decoration-color: var(--c-muted);
+  --list-marker-color: var(--c-muted);
+  --list-marker-color-hover: var(--c-ink);
+  --list-marker-color-collapsed: var(--c-accent);
+  --indentation-guide-color: var(--c-rule);
+  --indentation-guide-color-active: var(--c-muted);
+  --checkbox-color: var(--c-accent);
+  --checkbox-color-hover: var(--c-accent-hover);
+  --checkbox-border-color: var(--c-muted);
+  --checkbox-border-color-hover: var(--c-ink);
+  --checkbox-marker-color: var(--c-on-accent);
+  --checklist-done-color: var(--c-muted);
+  --checklist-done-decoration: line-through;
+  --table-border-color: var(--c-rule);
+  --table-header-background: var(--c-table-head);
+  --table-header-background-hover: var(--c-table-head);
+  --table-header-color: var(--c-table-head-text);
+  --table-row-background-hover: var(--c-row-hover);
+  --table-row-alt-background: transparent;
+  --table-selection: rgba(var(--c-accent-rgb), 0.2);
+  --table-selection-border-color: var(--c-accent);
+  --tag-background: transparent;
+  --tag-background-hover: var(--c-hover);
+  --tag-color: var(--c-ink);
+  --tag-color-hover: var(--c-ink);
+  --tag-border-color: var(--c-muted);
+  --tag-border-color-hover: var(--c-ink);
+  --embed-border-left: 2px solid var(--c-rule);
+  --embed-border-right: none;
+  --embed-border-top: none;
+  --embed-border-bottom: none;
+
+  /* Code: syntax in the Caribe palette */
+  --code-background: var(--c-surface);
+  --code-normal: var(--c-ink);
+  --code-comment: var(--c-muted);
+  --code-function: rgb(var(--c-cielo-rgb));
+  --code-important: rgb(var(--c-warning-rgb));
+  --code-keyword: rgb(var(--c-salmon-rgb));
+  --code-operator: var(--c-muted);
+  --code-property: rgb(var(--c-cielo-rgb));
+  --code-punctuation: var(--c-muted);
+  --code-string: rgb(var(--c-success-rgb));
+  --code-tag: rgb(var(--c-salmon-rgb));
+  --code-value: rgb(var(--c-mar-rgb));
+
+  /* Interface */
+  --shadow-s: 4px 4px 0 0 var(--c-shadow);
+  --shadow-l: 4px 4px 0 0 var(--c-shadow);
+  --modal-border-color: var(--c-border);
+  --prompt-border-color: var(--c-border);
+  --icon-color: var(--c-muted);
+  --icon-color-hover: var(--c-ink);
+  --icon-color-active: var(--c-accent);
+  --icon-color-focused: var(--c-ink);
+  --collapse-icon-color: var(--c-muted);
+  --collapse-icon-color-collapsed: var(--c-accent);
+  --nav-item-color: var(--c-muted);
+  --nav-item-color-hover: var(--c-ink);
+  --nav-item-color-active: var(--c-selected-text);
+  --nav-item-color-selected: var(--c-ink);
+  --nav-item-background-hover: var(--c-hover);
+  --nav-item-background-active: var(--c-selected);
+  --nav-item-background-selected: var(--c-pressed);
+  --toggle-thumb-color: var(--c-ink);
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: var(--c-rule);
+  --scrollbar-active-thumb-bg: var(--c-muted);
+  --metadata-label-text-color: var(--c-muted);
+  --metadata-divider-color: var(--c-rule);
+  --metadata-border-color: var(--c-rule);
+  --search-result-background: var(--c-bg);
+
+  /* Graph */
+  --graph-line: var(--c-rule);
+  --graph-node: var(--c-muted);
+  --graph-node-focused: var(--c-accent);
+  --graph-node-tag: rgb(var(--c-salmon-rgb));
+  --graph-node-attachment: rgb(var(--c-cielo-rgb));
+  --graph-node-unresolved: var(--c-faint);
+  --graph-text: var(--c-ink);
+}

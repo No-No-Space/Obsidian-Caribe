@@ -1,0 +1,217 @@
+/* The interface: neobrutalist. 2 px borders, hard offset shadows, square corners,
+   state in the fill, Mar Caribe for focus and selection. */
+
+/* ---------- Buttons ---------- */
+button:not(.clickable-icon) {
+  border: var(--divider-width) solid var(--c-border);
+  box-shadow: var(--shadow-s);
+  background-color: var(--interactive-normal);
+  color: var(--text-normal);
+  font-family: var(--caribe-font-heading);
+  font-weight: 700;
+  transition: background-color 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+button:not(.clickable-icon):hover {
+  background-color: var(--c-hover);
+  box-shadow: var(--shadow-s);
+}
+button:not(.clickable-icon):active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+button.mod-cta {
+  background-color: var(--c-accent);
+  color: var(--c-on-accent);
+}
+button.mod-cta:hover { background-color: var(--c-accent-hover); }
+button.mod-cta:active { background-color: var(--c-accent-pressed); }
+button.mod-warning {
+  background-color: rgb(var(--c-error-rgb));
+  color: var(--c-on-accent);
+}
+button:not(.clickable-icon):disabled,
+button:not(.clickable-icon)[disabled] {
+  background-color: var(--c-disabled);
+  color: var(--c-faint);
+  border-color: var(--c-disabled-border);
+  box-shadow: none;
+  transform: none;
+}
+
+/* ---------- Fields ---------- */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+textarea,
+select,
+.dropdown {
+  border: var(--divider-width) solid var(--c-border);
+  border-radius: 0;
+  box-shadow: none;
+  background-color: var(--c-bg);
+}
+.dropdown { font-family: var(--font-interface); }
+
+/* Focus: Mar Caribe, 2 px solid, 2 px offset — never a glow */
+input[type="text"]:focus,
+input[type="search"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus,
+.dropdown:focus,
+button:focus-visible,
+.clickable-icon:focus-visible,
+.tree-item-self:focus-visible,
+.vertical-tab-nav-item:focus-visible,
+.checkbox-container:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+/* Fields inside the metadata block and the editor's own search keep a lighter frame */
+.metadata-container input,
+.document-search-container input {
+  border-width: 1px;
+}
+
+/* ---------- Floating surfaces: modals, menus, prompts, popovers, notices ---------- */
+.modal,
+.prompt,
+.menu,
+.suggestion-container,
+.popover.hover-popover,
+.notice {
+  border: var(--divider-width) solid var(--c-border);
+  border-radius: 0;
+  box-shadow: var(--shadow-l);
+}
+.modal-title,
+.prompt-instructions-header {
+  font-family: var(--caribe-font-heading);
+  font-weight: 700;
+}
+.menu-item.selected:not(.is-disabled):not(.is-label),
+.suggestion-item.is-selected,
+.vertical-tab-nav-item.is-active {
+  background-color: var(--c-selected);
+  color: var(--c-selected-text);
+}
+.menu-item.selected:not(.is-disabled):not(.is-label) .menu-item-icon,
+.suggestion-item.is-selected .suggestion-hotkey,
+.suggestion-item.is-selected .suggestion-note,
+.vertical-tab-nav-item.is-active .vertical-tab-nav-item-chevron {
+  color: var(--c-selected-text);
+}
+.menu-separator { border-top: 1px solid var(--c-rule); }
+
+.notice {
+  background-color: var(--c-inverse-bg);
+  color: var(--c-inverse-ink);
+  border-color: var(--c-inverse-bg);
+}
+
+.tooltip {
+  background-color: var(--c-inverse-bg);
+  color: var(--c-inverse-ink);
+  border-radius: 0;
+  font-family: var(--font-monospace);
+  font-size: 11px;
+  box-shadow: none;
+}
+
+/* Hotkeys and counts in mono */
+.suggestion-hotkey,
+.prompt-instructions,
+kbd.setting-hotkey,
+.setting-hotkey,
+.tree-item-flair,
+.nav-file-tag {
+  font-family: var(--font-monospace);
+  border-radius: 0;
+}
+
+/* ---------- Tabs ---------- */
+.workspace-tab-header-container {
+  border-bottom: var(--divider-width) solid var(--c-border);
+}
+.workspace-tab-header-inner-title {
+  font-family: var(--caribe-font-heading);
+  font-weight: 700;
+  font-size: 0.8125rem;
+}
+.workspace-tab-header.is-active {
+  box-shadow: inset 0 3px 0 0 var(--c-accent);
+}
+.workspace .mod-root .workspace-tab-header.is-active::before,
+.workspace .mod-root .workspace-tab-header.is-active::after {
+  display: none; /* no curved tab feet */
+}
+
+/* ---------- Sidebars ---------- */
+.nav-folder-title {
+  font-weight: 700;
+}
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+  background-color: var(--c-selected);
+  color: var(--c-selected-text);
+}
+.nav-file-title.is-active .nav-file-tag,
+.tree-item-self.is-active .tree-item-flair {
+  color: var(--c-selected-text);
+}
+.view-header-title,
+.nav-header .nav-buttons-container {
+  font-family: var(--caribe-font-heading);
+}
+.view-header-title { font-weight: 700; }
+
+/* ---------- Toggles ---------- */
+.checkbox-container {
+  border: var(--toggle-border-width) solid var(--c-border);
+  background-color: var(--c-bg);
+  box-shadow: none;
+}
+.checkbox-container::after {
+  background-color: var(--c-ink);
+  box-shadow: none;
+}
+.checkbox-container.is-enabled {
+  background-color: var(--c-accent);
+}
+.checkbox-container.is-enabled::after {
+  background-color: var(--c-on-accent);
+}
+
+/* ---------- Sliders ---------- */
+input[type="range"]::-webkit-slider-thumb {
+  border-radius: 0;
+  border: 2px solid var(--c-border);
+  box-shadow: none;
+}
+
+/* ---------- Status bar, scrollbars ---------- */
+.status-bar {
+  font-family: var(--font-monospace);
+  border-top: var(--divider-width) solid var(--c-border);
+  border-left: var(--divider-width) solid var(--c-border);
+}
+::-webkit-scrollbar-thumb { border-radius: 0; }
+
+/* ---------- Settings ---------- */
+.setting-item-name { font-weight: 700; }
+.setting-item-heading .setting-item-name {
+  font-family: var(--caribe-font-heading);
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  button:not(.clickable-icon) { transition: none; }
+  button:not(.clickable-icon):active { transform: none; }
+}

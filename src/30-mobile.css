@@ -1,0 +1,40 @@
+/* iPad and phone. The same grammar; touch has no hover, so states live in :active. */
+
+.is-mobile {
+  --input-height: 40px;
+}
+
+.is-mobile .workspace-drawer {
+  border-radius: 0;
+  border-right: var(--divider-width) solid var(--c-border);
+}
+.is-mobile .workspace-drawer.mod-right {
+  border-right: none;
+  border-left: var(--divider-width) solid var(--c-border);
+}
+
+.is-mobile .mobile-toolbar {
+  border-top: var(--divider-width) solid var(--c-border);
+}
+.is-mobile .mobile-toolbar-option {
+  border-radius: 0;
+}
+
+/* On touch, a button sinks when tapped and that is all */
+.is-mobile button:not(.clickable-icon):hover {
+  background-color: var(--interactive-normal);
+}
+.is-mobile button.mod-cta:hover {
+  background-color: var(--c-accent);
+}
+
+/* The tablet tab bar */
+.is-tablet .workspace-tab-header-container {
+  border-bottom: var(--divider-width) solid var(--c-border);
+}
+
+/* Modals on a phone are full-width sheets: keep the frame, drop the offset shadow */
+.is-phone .modal,
+.is-phone .prompt {
+  box-shadow: none;
+}
