@@ -14,12 +14,12 @@
 .markdown-rendered h1,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
   padding-bottom: 0.2em;
-  border-bottom: var(--caribe-h1-rule) solid var(--c-border);
+  border-bottom: var(--caribe-h1-rule) solid var(--c-structure);
 }
 .markdown-rendered h2,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2 {
   padding-bottom: 0.15em;
-  border-bottom: var(--caribe-h2-rule) solid var(--c-border);
+  border-bottom: var(--caribe-h2-rule) solid var(--c-structure);
 }
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1,
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-2 {
@@ -91,7 +91,7 @@ input[type="checkbox"] {
 .markdown-rendered th { padding-top: 7px; padding-bottom: 7px; }
 .markdown-rendered tbody tr:last-child td,
 .markdown-source-view.mod-cm6 .cm-table-widget tr:last-child td {
-  border-bottom: var(--divider-width) solid var(--c-border);
+  border-bottom: var(--divider-width) solid var(--c-structure);
 }
 /* Figures in mono when written as `code` inside a cell */
 .markdown-rendered td code { background: none; padding: 0; }

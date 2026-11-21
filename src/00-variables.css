@@ -125,6 +125,11 @@ body {
   --link-decoration-thickness: 1px;
 
   /* Interface */
+  /* Moderustic ships 400 and 700 only: Obsidian's semibold (600) would round up to Bold
+     and turn the whole file tree and outline heavy. Lists of items stay regular. */
+  --nav-item-weight: 400;
+  --nav-item-weight-hover: 400;
+  --nav-item-weight-active: 400;
   --status-bar-font-size: 11px;
   --status-bar-radius: 0;
   --status-bar-border-width: 2px 0 0 2px;
@@ -145,10 +150,14 @@ body {
   --c-bg-rgb: var(--caribe-bg-page-dark-rgb);
   --c-surface: var(--caribe-bg-surface-dark);
   --c-chrome: var(--caribe-color-carbon);
-  --c-ink: var(--caribe-text-primary-dark);
+  /* Light on dark reads heavier than dark on light (irradiation), so in dark the
+     running text steps one notch down from Hueso; headings and bold keep full Hueso. */
+  --c-ink: var(--caribe-seq-neutro-1);
+  --c-heading: var(--caribe-text-primary-dark);
   --c-muted: var(--caribe-text-secondary-dark);
   --c-faint: var(--caribe-state-disabled-text-dark);
-  --c-border: var(--caribe-color-border-dark);
+  --c-border: var(--caribe-color-border-dark);       /* components: buttons, fields, modals */
+  --c-structure: var(--caribe-text-secondary-dark);  /* pane dividers and note rules: one step quieter */
   --c-rule: var(--caribe-table-rule-dark);
   --c-shadow: var(--caribe-shadow-color-dark);
   --c-accent: var(--caribe-color-mar-caribe-on-dark);
@@ -158,8 +167,9 @@ body {
   --c-on-accent: var(--caribe-color-carbon);
   --c-hover: var(--caribe-state-secondary-hover-dark);
   --c-pressed: var(--caribe-state-secondary-pressed-dark);
-  --c-selected: var(--caribe-row-selected-dark);
-  --c-selected-text: var(--caribe-row-selected-text-dark);
+  /* A large lifted-teal fill glows in dark chrome; the deep teal with Hueso text sits calmer (5.0:1). */
+  --c-selected: var(--caribe-row-selected);
+  --c-selected-text: var(--caribe-row-selected-text);
   --c-inverse-bg: var(--caribe-color-hueso);
   --c-inverse-ink: var(--caribe-color-carbon);
   --c-table-head: var(--caribe-table-head-dark);
@@ -191,9 +201,11 @@ body {
   --c-surface: var(--caribe-bg-page);
   --c-chrome: var(--caribe-bg-page);         /* ... on a Hueso table */
   --c-ink: var(--caribe-text-primary);
+  --c-heading: var(--caribe-text-primary);
   --c-muted: var(--caribe-seq-neutro-4);     /* text-secondary is 3.3:1: too low for small UI text */
   --c-faint: var(--caribe-text-secondary);
   --c-border: var(--caribe-color-border);
+  --c-structure: var(--caribe-color-border);
   --c-rule: var(--caribe-table-rule);
   --c-shadow: var(--caribe-shadow-color);
   --c-accent: var(--caribe-color-mar-caribe-deep);
@@ -253,10 +265,10 @@ body {
   --ribbon-background: var(--c-chrome);
   --ribbon-background-collapsed: var(--c-chrome);
   --status-bar-background: var(--c-chrome);
-  --status-bar-border-color: var(--c-border);
-  --divider-color: var(--c-border);
+  --status-bar-border-color: var(--c-structure);
+  --divider-color: var(--c-structure);
   --divider-color-hover: var(--c-accent);
-  --tab-outline-color: var(--c-border);
+  --tab-outline-color: var(--c-structure);
   --tab-background-active: var(--c-bg);
   --tab-text-color: var(--c-muted);
   --tab-text-color-active: var(--c-ink);
@@ -323,12 +335,13 @@ body {
   --callout-quote: var(--c-tierra-rgb);       /* cite */
 
   /* Note content */
-  --h1-color: var(--c-ink);
-  --h2-color: var(--c-ink);
-  --h5-color: var(--c-ink);
+  --h1-color: var(--c-heading);
+  --h2-color: var(--c-heading);
+  --h5-color: var(--c-heading);
   --h6-color: var(--c-muted);
-  --inline-title-color: var(--c-ink);
-  --hr-color: var(--c-border);
+  --inline-title-color: var(--c-heading);
+  --bold-color: var(--c-heading);
+  --hr-color: var(--c-structure);
   --blockquote-border-color: var(--c-muted);
   --blockquote-color: var(--c-ink);
   --link-color: var(--c-accent);

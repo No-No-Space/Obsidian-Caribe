@@ -6,15 +6,15 @@
 
 .is-mobile .workspace-drawer {
   border-radius: 0;
-  border-right: var(--divider-width) solid var(--c-border);
+  border-right: var(--divider-width) solid var(--c-structure);
 }
 .is-mobile .workspace-drawer.mod-right {
   border-right: none;
-  border-left: var(--divider-width) solid var(--c-border);
+  border-left: var(--divider-width) solid var(--c-structure);
 }
 
 .is-mobile .mobile-toolbar {
-  border-top: var(--divider-width) solid var(--c-border);
+  border-top: var(--divider-width) solid var(--c-structure);
 }
 .is-mobile .mobile-toolbar-option {
   border-radius: 0;
@@ -30,7 +30,7 @@
 
 /* The tablet tab bar */
 .is-tablet .workspace-tab-header-container {
-  border-bottom: var(--divider-width) solid var(--c-border);
+  border-bottom: var(--divider-width) solid var(--c-structure);
 }
 
 /* Modals on a phone are full-width sheets: keep the frame, drop the offset shadow */

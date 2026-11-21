@@ -138,7 +138,7 @@ kbd.setting-hotkey,
 
 /* ---------- Tabs ---------- */
 .workspace-tab-header-container {
-  border-bottom: var(--divider-width) solid var(--c-border);
+  border-bottom: var(--divider-width) solid var(--c-structure);
 }
 .workspace-tab-header-inner-title {
   font-family: var(--caribe-font-heading);
@@ -154,6 +154,11 @@ kbd.setting-hotkey,
 }
 
 /* ---------- Sidebars ---------- */
+.nav-file-title,
+.tree-item-self,
+.tree-item-inner {
+  font-weight: var(--nav-item-weight);
+}
 .nav-folder-title {
   font-weight: 700;
 }
@@ -199,8 +204,8 @@ input[type="range"]::-webkit-slider-thumb {
 /* ---------- Status bar, scrollbars ---------- */
 .status-bar {
   font-family: var(--font-monospace);
-  border-top: var(--divider-width) solid var(--c-border);
-  border-left: var(--divider-width) solid var(--c-border);
+  border-top: var(--divider-width) solid var(--c-structure);
+  border-left: var(--divider-width) solid var(--c-structure);
 }
 ::-webkit-scrollbar-thumb { border-radius: 0; }
 
@@ -208,6 +213,13 @@ input[type="range"]::-webkit-slider-thumb {
 .setting-item-name { font-weight: 700; }
 .setting-item-heading .setting-item-name {
   font-family: var(--caribe-font-heading);
+}
+
+/* ---------- Dark: grayscale smoothing ---------- */
+/* Subpixel antialiasing thickens light-on-dark strokes on macOS and iPadOS. (Windows ignores this.) */
+.theme-dark {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ---------- Motion ---------- */

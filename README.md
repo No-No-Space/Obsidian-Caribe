@@ -1,8 +1,8 @@
 # Caribe for Obsidian
 
 > Created: 2026-11-20 · by Aksel Alvarez Jurgueson, with Claude
-> Last updated: 2026-11-20 · by Claude
-> Version: v0.1.0
+> Last updated: 2026-11-21 · by Claude
+> Version: v0.1.1
 
 An Obsidian theme built on the Caribe (AAJ) design system. The interface is neobrutalist: 2 px borders, hard offset shadows, square corners. The writing area stays clean.
 
