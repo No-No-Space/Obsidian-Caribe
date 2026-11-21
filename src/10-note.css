@@ -47,6 +47,14 @@
 /* The inline title is not a heading: no rule, so H1 keeps its own weight */
 .inline-title { margin-bottom: 0.4em; }
 
+/* Active line, painted by a plugin through the "active-line-highlight" class:
+   a solid step of the ground, square corners, same weight in both modes.
+   The plugin default is grey at 8 % opacity, which all but vanishes on dark. */
+body .markdown-source-view.mod-cm6 .cm-line.active-line-highlight {
+  background-color: var(--c-active-line);
+  border-radius: 0;
+}
+
 /* ---------- Lists ---------- */
 /* Square bullets come from --list-bullet-radius: 0. Ordered markers in mono. */
 .markdown-rendered ol > li::marker {

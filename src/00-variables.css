@@ -166,6 +166,7 @@ body {
   --c-accent-pressed: var(--caribe-state-mar-caribe-pressed-dark);
   --c-on-accent: var(--caribe-color-carbon);
   --c-hover: var(--caribe-state-secondary-hover-dark);
+  --c-active-line: var(--caribe-color-carbon);
   --c-pressed: var(--caribe-state-secondary-pressed-dark);
   /* A large lifted-teal fill glows in dark chrome; the deep teal with Hueso text sits calmer (5.0:1). */
   --c-selected: var(--caribe-row-selected);
@@ -214,6 +215,7 @@ body {
   --c-accent-pressed: var(--caribe-state-mar-caribe-pressed);
   --c-on-accent: var(--caribe-color-hueso);
   --c-hover: var(--caribe-state-secondary-hover);
+  --c-active-line: var(--caribe-bg-page);
   --c-pressed: var(--caribe-state-secondary-pressed);
   --c-selected: var(--caribe-row-selected);
   --c-selected-text: var(--caribe-row-selected-text);

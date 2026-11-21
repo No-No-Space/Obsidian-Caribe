@@ -1,4 +1,4 @@
-/* Caribe 0.1.1 for Obsidian, by Aksel Alvarez Jurgueson.
+/* Caribe 0.1.2 for Obsidian, by Aksel Alvarez Jurgueson.
  * Built on the Caribe (AAJ) design system. GENERATED FILE: edit src/ and run build.py. */
 
 /* ---- Fonts (all SIL OFL 1.1; licences in fonts/) ---- */
@@ -358,6 +358,7 @@ body {
   --c-accent-pressed: var(--caribe-state-mar-caribe-pressed-dark);
   --c-on-accent: var(--caribe-color-carbon);
   --c-hover: var(--caribe-state-secondary-hover-dark);
+  --c-active-line: var(--caribe-color-carbon);
   --c-pressed: var(--caribe-state-secondary-pressed-dark);
   /* A large lifted-teal fill glows in dark chrome; the deep teal with Hueso text sits calmer (5.0:1). */
   --c-selected: var(--caribe-row-selected);
@@ -406,6 +407,7 @@ body {
   --c-accent-pressed: var(--caribe-state-mar-caribe-pressed);
   --c-on-accent: var(--caribe-color-hueso);
   --c-hover: var(--caribe-state-secondary-hover);
+  --c-active-line: var(--caribe-bg-page);
   --c-pressed: var(--caribe-state-secondary-pressed);
   --c-selected: var(--caribe-row-selected);
   --c-selected-text: var(--caribe-row-selected-text);
@@ -674,6 +676,14 @@ body {
 
 /* The inline title is not a heading: no rule, so H1 keeps its own weight */
 .inline-title { margin-bottom: 0.4em; }
+
+/* Active line, painted by a plugin through the "active-line-highlight" class:
+   a solid step of the ground, square corners, same weight in both modes.
+   The plugin default is grey at 8 % opacity, which all but vanishes on dark. */
+body .markdown-source-view.mod-cm6 .cm-line.active-line-highlight {
+  background-color: var(--c-active-line);
+  border-radius: 0;
+}
 
 /* ---------- Lists ---------- */
 /* Square bullets come from --list-bullet-radius: 0. Ordered markers in mono. */
