@@ -1,0 +1,11 @@
+# Only the cuts the theme embeds are tracked; the rest of each family stays local.
+*.otf
+*.ttf
+*.woff
+*.woff2
+!Gully-Bold.woff2
+!Moderustic-Regular.woff2
+!Moderustic-Bold.woff2
+!FliegeMono-Light.woff2
+!FliegeMono-Regular.woff2
+!FliegeMono-Medium.woff2
